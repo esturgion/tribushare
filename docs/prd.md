@@ -14,7 +14,7 @@ Quand j'ai besoin d'un bien (biens, livre, outil, jeu ... ) pour un usage tempor
 L'application cible un échange entre des utilisateurs qui se connaissent déjà. L'application sert avant tout à faciliter un système d'échange déjà naturellement mis en place en mutualisant les ressources et en contrôlant qui a accès à ces ressources (visible uniquement de son cercle privé et pas d'inconnus).
 
 ## Fonctionnalité centrale
-Mise en commun des biens dans un espace où tout est centralisé.
+Permettre aux utilisateurs de se regrouper et centraliser leurs biens dans un espace commmun.
 
 ## Métrique de succès
 - Connexion régulère des utilisateurs
