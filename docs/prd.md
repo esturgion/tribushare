@@ -5,10 +5,10 @@ Quand j'ai besoin d'un bien (biens, livre, outil, jeu ... ) pour un usage tempor
 
 ## La cible
 
-- Joël, 36 ans, père de famille
-- Sophie, 14 ans, a beaucoup d'amis
-- Roger, 72 ans, membre d'un club de bridge
-- Coralie, 22 ans, membre d'un club d'escrime
+>- Sophie, 14 ans, aime partager des choses avec ses amis mais ne sait plus ce qu'elle a partagé avec qui
+- Joël, 36 ans, membre d'une copopriété qui dont les membres veulent mettre à disposition leurs outils (jardin, bricolage ...) mais on besoin d'un moyen simple de savoir qui possède quoi
+>- Cédric, 28 ans, membre d'une association sportive, a besoin de pouvoir gérer facilement les membres du groupe en fonction des personnes qui intègre ou quitte l'association
+- Christiane, 82 ans, peu à l'aise avec les outils numériques, ajoutée par les membres de sa famille, à besoin d'une interface simple à utiliser
 
 ## La proposition à valeur unique
 L'application cible un échange entre des utilisateurs qui se connaissent déjà. L'application sert avant tout à faciliter un système d'échange déjà naturellement mis en place en mutualisant les ressources et en contrôlant qui a accès à ces ressources (visible uniquement de son cercle privé et pas d'inconnus).
@@ -22,13 +22,12 @@ Permettre aux utilisateurs de se regrouper et centraliser leurs biens dans un es
 - Des emprunteurs sont assignés aux biens
 
 ## Hors périmètre
-
 - Pas de système de prêt complet : pas de réservation, pas de durée de prêt, pas de règles imposées par l'application. Comme les utiliateurs se connaissent, ils peuvent librement se mettre d'accord.
 - Pas de système de livraison
 - Pas de système de paiement
 - Pas de hiérarchisation poussé : seul rôle de l'administrateur du groupe (son créateur) avec peu de pouvoir (virer un membre ou nommé un autre membre administateur), pas d'autres rôles limitant l'accès à certains bien, pas de gestions des biens d'autrui par l'administrateur
 
-## Hypothèse et risque
+## Hypothèses et risques
 
 ### Hypohtèses
 - Les utilisateurs sont prêt à utiliser une application comme outil pour faciliter le prêt dans un cercle de confiance
