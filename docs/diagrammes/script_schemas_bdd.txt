@@ -10,4 +10,4 @@ borowed, 0NUser, 0NItem
 Item: id[COUNTER], name[VARCHAR(100)], description[TEXT], category[VARCHAR(100)], image_url[VARCHAR(255)]
 
 
-(ajouter, create_at pour group (renommé tribe) et item; supprimer nom et prénom de user)
+(ajouter, create_at pour group (renommé tribe) et item)

@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-enum GroupRoleEnum: string
+enum TribeRoleEnum: string
 {
     case MEMBER = 'member';
     case OWNER = 'owner';
