@@ -1,0 +1,10 @@
+belong, 0NUser, 1NGroup: userStatus[ENUM]
+Group: id[COUNTER], name[VARCHAR(255)], code[INT], is_active[BOOLEAN]
+link, 0NGroup, 0NItem
+
+User: id[COUNTER], name[VARCHAR(100)], surname[VARCHAR(100)], pseudo[VARCHAR(100)], mail[VARCHAR(255)], password[VARCHAR(255)], rôle[ENUM]
+owning, 0NUser, 11Item
+
+borowed, 0NUser, 0NItem
+:
+Item: id[COUNTER], name[VARCHAR(100)], description[TEXT], category[VARCHAR(100)], image_url[VARCHAR(255)]
