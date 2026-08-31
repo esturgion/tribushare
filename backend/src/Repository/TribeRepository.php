@@ -16,28 +16,14 @@ class TribeRepository extends ServiceEntityRepository
         parent::__construct($registry, Tribe::class);
     }
 
-    //    /**
-    //     * @return Tribe[] Returns an array of Tribe objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('t')
-    //            ->andWhere('t.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('t.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+   public function codeExists(int $code): bool
+    {
+        return $this->createQueryBuilder('t')
+            ->select('1')
+            ->andWhere('t.code = :code')
+            ->setParameter('code', $code)
+            ->getQuery()
+            ->getOneOrNullResult() !== null;
+    }
 
-    //    public function findOneBySomeField($value): ?Tribe
-    //    {
-    //        return $this->createQueryBuilder('t')
-    //            ->andWhere('t.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }
