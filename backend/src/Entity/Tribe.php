@@ -18,7 +18,7 @@ class Tribe
     #[ORM\Column(length: 200)]
     private ?string $name = null;
 
-    #[ORM\Column]
+    #[ORM\Column(unique: true)]
     private ?int $code = null;
 
     #[ORM\Column]
@@ -43,6 +43,8 @@ class Tribe
     {
         $this->items = new ArrayCollection();
         $this->members = new ArrayCollection();
+        $this->created_at = new \DateTimeImmutable();
+        $this->is_active = true;
     }
 
     public function getId(): ?int
