@@ -5,9 +5,9 @@ link, 0NGroup, 0NItem
 User: id[COUNTER], name[VARCHAR(100)], surname[VARCHAR(100)], pseudo[VARCHAR(100)], mail[VARCHAR(255)], password[VARCHAR(255)], rôle[ENUM]
 owning, 0NUser, 11Item
 
-borowed, 0NUser, 0NItem
+borrowed, 0NUser, 0NItem: borrowed_at[DATETIME], returned_at[DATETIME]
 :
-Item: id[COUNTER], name[VARCHAR(100)], description[TEXT], category[VARCHAR(100)], image_url[VARCHAR(255)]
+Item: id[COUNTER], name[VARCHAR(100)], description[TEXT], category[ENUM], image_url[VARCHAR(255)]
 
 
 (ajouter, create_at pour group (renommé tribe) et item)
