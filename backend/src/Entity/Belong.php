@@ -7,6 +7,14 @@ use App\Repository\BelongRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BelongRepository::class)]
+#[ORM\Table(
+    uniqueConstraints: [
+        new ORM\UniqueConstraint(
+            name: 'unique_member_tribe',
+            columns: ['member_id', 'tribe_id']
+        )
+    ]
+)]
 class Belong
 {
     #[ORM\Id]

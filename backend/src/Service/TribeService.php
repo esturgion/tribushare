@@ -3,12 +3,11 @@
 namespace App\Service;
 
 use App\Dto\CreateTribeDto;
-use App\Entity\Belong;
 use App\Entity\Tribe;
 use App\Entity\User;
-use App\Enum\TribeRoleEnum;
 use App\Mapper\TribeMapper;
 use App\Repository\TribeRepository;
+use App\Service\Factory\BelongFactory;
 use Doctrine\ORM\EntityManagerInterface;
 
 class TribeService
@@ -16,7 +15,8 @@ class TribeService
     public function __construct(
         private TribeMapper $mapper,
         private TribeRepository $tribeRepository,
-        private EntityManagerInterface $entityManager,
+        private EntityManagerInterface $em,
+        private BelongFactory $belongFactory,
     ) {
     }
 
@@ -28,7 +28,7 @@ class TribeService
             $this->codeGenerator()
         );
 
-        $user = $this->entityManager
+        $user = $this->em
             ->getRepository(User::class)
             ->find(1);
 
@@ -36,16 +36,13 @@ class TribeService
             throw new \RuntimeException('User with id 1 not found.');
         }
 
-        $belong = new Belong();
-        $belong->setMember($user);
-        $belong->setTribe($tribe);
-        $belong->setUserStatus(TribeRoleEnum::OWNER);
+        $belong = $this->belongFactory->createOwner($user, $tribe);
 
-        $this->entityManager->persist($tribe);
-        $this->entityManager->persist($belong);
+        $this->em->persist($tribe);
+        $this->em->persist($belong);
 
-        $this->entityManager->persist($tribe);
-        $this->entityManager->flush();
+        $this->em->persist($tribe);
+        $this->em->flush();
 
         return $tribe;
     }

@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Belong;
+use App\Entity\Tribe;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,28 +18,12 @@ class BelongRepository extends ServiceEntityRepository
         parent::__construct($registry, Belong::class);
     }
 
-//    /**
-//     * @return Belong[] Returns an array of Belong objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('b.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    public function findByUserAndTribe(User $user, Tribe $tribe): ?Belong
+    {
+        return $this->findOneBy([
+            'member' => $user,
+            'tribe' => $tribe,
+        ]);
+    }
 
-//    public function findOneBySomeField($value): ?Belong
-//    {
-//        return $this->createQueryBuilder('b')
-//            ->andWhere('b.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }
