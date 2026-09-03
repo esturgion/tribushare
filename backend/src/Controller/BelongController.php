@@ -13,13 +13,12 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/api', name: 'app_belong')]
 final class BelongController extends AbstractController
 {
-    #[Route('/belong/add/{user}', name: '_add_user', methods:['POST'])]
+    #[Route('/belong/add/{user}', name: '_add_user', methods: ['POST'])]
     public function addUser(
         User $user,
         Request $request,
         BelongService $belongService,
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $data = json_decode($request->getContent(), true);
 
         $invitationCode = $data['invitationCode'] ?? null;
@@ -35,6 +34,7 @@ final class BelongController extends AbstractController
 
         try {
             $belongService->addUserToTribe($user, $invitationCode);
+
             return new JsonResponse(
                 [
                     'message' => 'Utilisateur ajouté à la tribe.',

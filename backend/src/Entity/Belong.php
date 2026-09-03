@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
         new ORM\UniqueConstraint(
             name: 'unique_member_tribe',
             columns: ['member_id', 'tribe_id']
-        )
+        ),
     ]
 )]
 class Belong

@@ -15,8 +15,8 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 #[Route('/api', name: 'app_tribe')]
 final class TribeController extends AbstractController
 {
-    #[Route('/tribe/create', name: '_create', methods:['POST'])]
-        public function create(
+    #[Route('/tribe/create', name: '_create', methods: ['POST'])]
+    public function create(
         Request $request,
         SerializerInterface $serializer,
         ValidatorInterface $validator,
@@ -47,7 +47,5 @@ final class TribeController extends AbstractController
             ],
             Response::HTTP_CREATED
         );
-
     }
 }
-
