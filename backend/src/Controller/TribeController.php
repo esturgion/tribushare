@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Dto\CreateTribeDto;
+use App\Entity\Tribe;
 use App\Service\TribeService;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,6 +46,27 @@ final class TribeController extends AbstractController
             [
                 'id' => $tribe->getId(),
                 'message' => 'Tribe created',
+            ],
+            Response::HTTP_CREATED
+        );
+    }
+
+    #[Route('/tribe/new-code/{tribe}', name: '_new_code', methods: ['PATCH'])]
+    public function generateNewInivationCode(
+        Tribe $tribe,
+        TribeService $tribeService,
+        EntityManagerInterface $em,
+    ): JsonResponse {
+        $code = $tribeService->codeGenerator();
+        $tribe->setCode($code);
+
+        $em->persist($tribe);
+        $em->flush();
+
+        return new JsonResponse(
+            [
+                'code' => $tribe->getCode(),
+                'message' => 'New code generated',
             ],
             Response::HTTP_CREATED
         );

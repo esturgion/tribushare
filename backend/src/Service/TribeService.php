@@ -46,7 +46,7 @@ class TribeService
         return $tribe;
     }
 
-    private function codeGenerator(): int
+    public function codeGenerator(): int
     {
         do {
             $code = random_int(100000, 999999);
