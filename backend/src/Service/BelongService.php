@@ -29,7 +29,7 @@ class BelongService
             throw new \Exception('Code d\'invitation invalide.');
         }
 
-        $existingBelong = $this->belongRepository->findByUserAndTribe($user,$tribe);
+        $existingBelong = $this->belongRepository->findByUserAndTribe($user, $tribe);
 
         if ($existingBelong) {
             throw new \Exception('Cet utilisateur appartient déjà à cette tribe.');
@@ -42,5 +42,4 @@ class BelongService
 
         return $belong;
     }
-
 }

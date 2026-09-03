@@ -16,14 +16,13 @@ class TribeRepository extends ServiceEntityRepository
         parent::__construct($registry, Tribe::class);
     }
 
-   public function codeExists(int $code): bool
+    public function codeExists(int $code): bool
     {
-        return $this->createQueryBuilder('t')
+        return null !== $this->createQueryBuilder('t')
             ->select('1')
             ->andWhere('t.code = :code')
             ->setParameter('code', $code)
             ->getQuery()
-            ->getOneOrNullResult() !== null;
+            ->getOneOrNullResult();
     }
-
 }

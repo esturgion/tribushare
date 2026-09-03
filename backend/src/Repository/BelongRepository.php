@@ -25,5 +25,4 @@ class BelongRepository extends ServiceEntityRepository
             'tribe' => $tribe,
         ]);
     }
-
 }
