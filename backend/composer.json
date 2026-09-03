@@ -30,6 +30,7 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^4.3",
         "friendsofphp/php-cs-fixer": "^3.95",
+        "phpunit/phpunit": "^13.3",
         "symfony/maker-bundle": "^1.67"
     },
     "config": {
@@ -75,7 +76,10 @@
             "@auto-scripts"
         ],
         "cs-fix": "./vendor/bin/php-cs-fixer fix",
-        "cs-check": "./vendor/bin/php-cs-fixer check"
+        "cs-check": "./vendor/bin/php-cs-fixer check",
+        "test": "php bin/phpunit",
+        "test:unit": "php bin/phpunit --testsuite=unit",
+        "test:inte": "php bin/phpunit --testsuite=integration"
     },
     "conflict": {
         "symfony/symfony": "*"

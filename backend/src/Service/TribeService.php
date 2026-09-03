@@ -41,7 +41,6 @@ class TribeService
         $this->em->persist($tribe);
         $this->em->persist($belong);
 
-        $this->em->persist($tribe);
         $this->em->flush();
 
         return $tribe;
