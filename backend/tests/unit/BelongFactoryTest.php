@@ -2,7 +2,6 @@
 
 namespace App\Tests;
 
-use App\Entity\Belong;
 use App\Entity\Tribe;
 use App\Entity\User;
 use App\Enum\TribeRoleEnum;
@@ -25,7 +24,7 @@ class BelongFactoryTest extends TestCase
             $belong->getUserStatus()
         );
     }
-    
+
     public function testCreateOwner(): void
     {
         $user = new User();
